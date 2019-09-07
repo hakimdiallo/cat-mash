@@ -45,4 +45,9 @@ public class CatController {
   public ResponseEntity<CatDto> voteForCat(@RequestBody int id) {
     return null;
   }
+  
+  @GetMapping("/init/data")
+  public ResponseEntity<List<CatDto>> initData() {
+    return new ResponseEntity<>(catService.initData(), HttpStatus.OK);
+  }
 }
