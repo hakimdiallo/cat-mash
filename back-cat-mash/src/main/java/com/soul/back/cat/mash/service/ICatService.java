@@ -14,4 +14,6 @@ public interface ICatService {
   List<CatDto> getCatMash();
 
   CatDto voteForCat(int id);
+  
+  List<CatDto> initData();
 }
