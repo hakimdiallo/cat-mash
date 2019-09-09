@@ -1,7 +1,10 @@
 package com.soul.back.cat.mash.service;
 
+import java.net.URISyntaxException;
 import java.util.List;
+import org.springframework.web.client.RestClientException;
 import com.soul.back.cat.mash.bean.CatDto;
+import com.soul.back.cat.mash.entity.CatEntity;
 
 public interface ICatService {
   
@@ -13,7 +16,7 @@ public interface ICatService {
   
   List<CatDto> getCatMash();
 
-  CatDto voteForCat(int id);
+  CatDto voteForCat(String id);
   
-  List<CatDto> initData();
+  List<CatEntity> initData() throws RestClientException, URISyntaxException;
 }
