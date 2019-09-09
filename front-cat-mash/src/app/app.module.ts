@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CatMashVoteComponent } from './cat-mash-vote/cat-mash-vote.component';
 import { CatMashListComponent } from './cat-mash-list/cat-mash-list.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { CatMashListComponent } from './cat-mash-list/cat-mash-list.component';
     CatMashListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
