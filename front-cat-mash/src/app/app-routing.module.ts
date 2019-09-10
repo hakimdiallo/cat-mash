@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CatMashVoteComponent } from './cat-mash-vote/cat-mash-vote.component';
+import { CatMashListComponent } from './cat-mash-list/cat-mash-list.component';
 
 const routes: Routes = [
   {
@@ -9,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'cats',
-    component: CatMashVoteComponent
+    component: CatMashListComponent
   }
 ];
 
