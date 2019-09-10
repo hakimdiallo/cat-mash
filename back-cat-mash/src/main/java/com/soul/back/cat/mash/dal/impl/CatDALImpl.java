@@ -1,6 +1,8 @@
 package com.soul.back.cat.mash.dal.impl;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -44,8 +46,9 @@ public class CatDALImpl implements ICatDAL {
 
   @Override
   public List<CatEntity> getCatMash() {
-    int index = (int)Math.floor(Math.random() * 100);
+    int index = (int)Math.floor(Math.random() * 99);
     List<CatEntity> cats = mongoTemplate.findAll(CatEntity.class);
+    Collections.shuffle(cats, new Random());
     return cats.subList(index, index+2);
   }
 
