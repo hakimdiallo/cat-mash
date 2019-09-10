@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -27,10 +28,11 @@ public class CatDALImpl implements ICatDAL {
     return mongoTemplate.findAll(CatEntity.class);
   }
 
+  @SuppressWarnings("deprecation")
   @Override
   public List<CatEntity> getCatsOrderByScore() {
     Query query = new Query();
-    query.with(new Sort(Sort.Direction.DESC, "score"));
+    query.with(new PageRequest(0, 10, new Sort(Sort.Direction.DESC, "score")));
     return mongoTemplate.find(query, CatEntity.class);
   }
 
