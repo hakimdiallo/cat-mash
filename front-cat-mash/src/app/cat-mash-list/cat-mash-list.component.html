@@ -1,3 +1,9 @@
-<p>
-  cat-mash-list works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3" *ngFor="let cat of cats">
+      <div class="polaroid">
+        <img src="{{cat.url}}" class="img-fluid img-thumbnail rounded img" alt="...">
+      </div>
+    </div>
+  </div>
+</div>
