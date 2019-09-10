@@ -1,3 +1,31 @@
-<p>
-  cat-mash-vote works!
-</p>
+<div class="container-fluid">
+  <div *ngIf="catmash" class="row">
+    <div class="col">
+      <div class="text-center">
+        <div class="polaroid">
+          <img src="{{catmash[0].url}}" class="img-fluid img-thumbnail rounded img" alt="...">
+          <div class="containerized">
+            <button class="btn btn-outline-secondary" (click)="vote(catmash[0].id)">Like</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="text-center">
+        <div class="polaroid">
+          <img src="{{catmash[1].url}}" class="img-fluid img-thumbnail rounded img" alt="...">
+          <div class="containerized">
+            <button class="btn btn-outline-secondary" (click)="vote(catmash[1].id)">Like</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center" *ngIf="scores">
+    <div class="polaroid">
+      <div class="containerized">
+          <button class="btn btn-outline-info btn-lg" (click)="seeSweetTestCats()"><strong>Voir les plus beaux chats</strong> ({{scores}} votes)</button>
+      </div>
+    </div>
+  </div>
+</div>
