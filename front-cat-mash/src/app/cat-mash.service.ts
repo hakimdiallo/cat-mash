@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CatMashService {
 
-  private baseUrl = 'http://localhost:8080/api/cat-mash';
+  private baseUrl = 'http://localhost:8090/api/cat-mash';
 
   constructor(private httpClient: HttpClient) { }
 
