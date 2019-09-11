@@ -56,11 +56,12 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
+					<finalName>api-catmash</finalName>
 				  <archive>
 				    <manifest>
-					<addClasspath>true</addClasspath>
-					<mainClass>com.soul.back.cat.mash.App</mainClass>
-					<classpathPrefix>dependency-jars/</classpathPrefix>
+							<addClasspath>true</addClasspath>
+							<mainClass>com.soul.back.cat.mash.App</mainClass>
+							<classpathPrefix>dependency-jars/</classpathPrefix>
 				    </manifest>
 				  </archive>
 				</configuration>
