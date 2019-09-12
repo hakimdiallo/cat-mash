@@ -1,5 +1,5 @@
-FROM anapsix/alpine-java
-MAINTAINER api-catmash 
-COPY target/api-catmash.jar /home/soulche/catmash-app/api-catmash.jar
-EXPOSE 8090
-CMD ["java","-jar","/home/soulche/catmash-app/api-catmash.jar"]
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+ARG JAR_FILE
+COPY ${JAR_FILE} api-catmash.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/api-catmash.jar"]
