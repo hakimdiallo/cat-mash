@@ -1,5 +1,7 @@
 FROM java:8-jre-alpine
 
-WORKDIR /opt/webapps/catmash 
+WORKDIR /opt/webapps/catmash
 
-ENTRYPOINT java -jar target/back-cat-mash-*.jar
+COPY target/back-cat-mash-*.jar . 
+
+ENTRYPOINT java -jar back-cat-mash-*.jar
