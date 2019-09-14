@@ -47,6 +47,20 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>com.soul.back.cat.mash.App</mainClass>
+							<classpathPrefix>dependency-jars/</classpathPrefix>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
@@ -76,13 +90,18 @@
 									<version>${project.version}</version>
 								</artifactItem>
 							</artifactItems>
-							<archive>
-		          <manifest>
-		            <addClasspath>true</addClasspath>
-		            <classpathPrefix>lib/</classpathPrefix>
-		            <mainClass>com.soul.back.cat.mash.App</mainClass>
-		          </manifest>
-		        </archive>
+						</configuration>
+					</execution>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>
+								${project.build.directory}/dependency-jars/
+							</outputDirectory>
 						</configuration>
 					</execution>
 				</executions>
