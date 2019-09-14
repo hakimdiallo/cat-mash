@@ -76,6 +76,13 @@
 									<version>${project.version}</version>
 								</artifactItem>
 							</artifactItems>
+							<archive>
+		          <manifest>
+		            <addClasspath>true</addClasspath>
+		            <classpathPrefix>lib/</classpathPrefix>
+		            <mainClass>com.soul.back.cat.mash.App</mainClass>
+		          </manifest>
+		        </archive>
 						</configuration>
 					</execution>
 				</executions>
